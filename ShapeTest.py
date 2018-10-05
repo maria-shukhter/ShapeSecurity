@@ -40,7 +40,7 @@ class TestPage(BasePage):
 
         self.assertEqual(result, True)
 
-        print(max, longestWord, "\n")
+        print('Longest word is ', longestWord, "\n")
 
     def test_punisher_image_doesnt_appear(self):
         print("Test Punisher Image doesnt appear ")
@@ -58,7 +58,6 @@ class TestPage(BasePage):
         self.driver.get(" https://the-internet.herokuapp.com/dynamic_content")
         image_list = self.driver.find_elements_by_css_selector(".large-2.columns >img")
         for image in image_list:
-            print(image.get_attribute("src"))
             print(map_Images[image.get_attribute("src")])
             if image.get_attribute(
                     "src") == 'https://the-internet.herokuapp.com/img/avatars/Original-Facebook-Geek-Profile-Avatar-3.jpg':
